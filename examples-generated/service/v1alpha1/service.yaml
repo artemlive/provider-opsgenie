@@ -1,0 +1,29 @@
+apiVersion: service.macpaw.dev/v1alpha1
+kind: Service
+metadata:
+  annotations:
+    meta.upbound.io/example-id: service/v1alpha1/service
+  labels:
+    testing.upbound.io/example-name: this
+  name: this
+spec:
+  forProvider:
+    name: Payment
+    teamIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: example
+
+---
+
+apiVersion: team.macpaw.dev/v1alpha1
+kind: Team
+metadata:
+  annotations:
+    meta.upbound.io/example-id: service/v1alpha1/service
+  labels:
+    testing.upbound.io/example-name: payment
+  name: payment
+spec:
+  forProvider:
+    description: This team deals with all the things
+    name: example

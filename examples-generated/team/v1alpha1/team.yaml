@@ -1,0 +1,53 @@
+apiVersion: team.macpaw.dev/v1alpha1
+kind: Team
+metadata:
+  annotations:
+    meta.upbound.io/example-id: team/v1alpha1/team
+  labels:
+    testing.upbound.io/example-name: test
+  name: test
+spec:
+  forProvider:
+    description: This team deals with all the things
+    member:
+    - idSelector:
+        matchLabels:
+          testing.upbound.io/example-name: first
+      role: admin
+    - idSelector:
+        matchLabels:
+          testing.upbound.io/example-name: second
+      role: user
+    name: example
+
+---
+
+apiVersion: user.macpaw.dev/v1alpha1
+kind: User
+metadata:
+  annotations:
+    meta.upbound.io/example-id: team/v1alpha1/team
+  labels:
+    testing.upbound.io/example-name: first
+  name: first
+spec:
+  forProvider:
+    fullName: 'name '
+    role: User
+    username: user@domain.com
+
+---
+
+apiVersion: user.macpaw.dev/v1alpha1
+kind: User
+metadata:
+  annotations:
+    meta.upbound.io/example-id: team/v1alpha1/team
+  labels:
+    testing.upbound.io/example-name: second
+  name: second
+spec:
+  forProvider:
+    fullName: 'name '
+    role: User
+    username: test@domain.com

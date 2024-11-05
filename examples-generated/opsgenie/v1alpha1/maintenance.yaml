@@ -1,0 +1,17 @@
+apiVersion: opsgenie.macpaw.dev/v1alpha1
+kind: Maintenance
+metadata:
+  annotations:
+    meta.upbound.io/example-id: opsgenie/v1alpha1/maintenance
+  labels:
+    testing.upbound.io/example-name: test
+  name: test
+spec:
+  forProvider:
+    description: geniemaintenance-%s
+    rules:
+    - {}
+    time:
+    - endDate: "2019-06-20T17:50:00Z"
+      startDate: "2019-06-20T17:45:00Z"
+      type: schedule

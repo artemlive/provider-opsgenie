@@ -1,0 +1,20 @@
+apiVersion: opsgenie.macpaw.dev/v1alpha1
+kind: Escalation
+metadata:
+  annotations:
+    meta.upbound.io/example-id: opsgenie/v1alpha1/escalation
+  labels:
+    testing.upbound.io/example-name: default
+  name: default
+spec:
+  forProvider:
+    name: genieescalation
+    rules:
+    - condition: if-not-acked
+      delay: 1
+      notifyType: default
+      recipient:
+      - idSelector:
+          matchLabels:
+            testing.upbound.io/example-name: test
+        type: user

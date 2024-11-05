@@ -1,0 +1,17 @@
+apiVersion: api.macpaw.dev/v1alpha1
+kind: Integration
+metadata:
+  annotations:
+    meta.upbound.io/example-id: api/v1alpha1/integration
+  labels:
+    testing.upbound.io/example-name: example-api-integration
+  name: example-api-integration
+spec:
+  forProvider:
+    name: api-based-int
+    responders:
+    - id: ${opsgenie_user.user.id}
+      type: user
+    - id: ${opsgenie_user.fahri.id}
+      type: user
+    type: API

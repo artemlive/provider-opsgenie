@@ -1,0 +1,15 @@
+apiVersion: user.macpaw.dev/v1alpha1
+kind: UserContact
+metadata:
+  annotations:
+    meta.upbound.io/example-id: user/v1alpha1/usercontact
+  labels:
+    testing.upbound.io/example-name: sms
+  name: sms
+spec:
+  forProvider:
+    method: sms
+    to: 39-123
+    usernameSelector:
+      matchLabels:
+        testing.upbound.io/example-name: exampleuser

@@ -1,0 +1,12 @@
+apiVersion: email.macpaw.dev/v1alpha1
+kind: EmailIntegration
+metadata:
+  annotations:
+    meta.upbound.io/example-id: email/v1alpha1/emailintegration
+  labels:
+    testing.upbound.io/example-name: test
+  name: test
+spec:
+  forProvider:
+    emailUsername: fahri
+    name: genieintegration-name

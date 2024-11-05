@@ -1,0 +1,29 @@
+apiVersion: team.macpaw.dev/v1alpha1
+kind: ScheduleRotation
+metadata:
+  annotations:
+    meta.upbound.io/example-id: team/v1alpha1/schedulerotation
+  labels:
+    testing.upbound.io/example-name: test
+  name: test
+spec:
+  forProvider:
+    endDate: "2019-06-20T17:30:00Z"
+    length: 6
+    participant:
+    - idSelector:
+        matchLabels:
+          testing.upbound.io/example-name: test
+      type: user
+    scheduleIdSelector:
+      matchLabels:
+        testing.upbound.io/example-name: test
+    startDate: "2019-06-18T17:00:00Z"
+    timeRestriction:
+    - restriction:
+      - endHour: 10
+        endMin: 1
+        startHour: 1
+        startMin: 1
+      type: time-of-day
+    type: hourly

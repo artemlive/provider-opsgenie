@@ -1,4 +1,4 @@
-module github.com/upbound/upjet-provider-template
+module github.com/macpaw/provider-opsgenie
 
 go 1.21
 

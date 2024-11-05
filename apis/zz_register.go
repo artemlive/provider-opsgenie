@@ -10,15 +10,33 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/upbound/upjet-provider-template/apis/null/v1alpha1"
-	v1alpha1apis "github.com/upbound/upjet-provider-template/apis/v1alpha1"
-	v1beta1 "github.com/upbound/upjet-provider-template/apis/v1beta1"
+	v1alpha1 "github.com/macpaw/provider-opsgenie/apis/alert/v1alpha1"
+	v1alpha1api "github.com/macpaw/provider-opsgenie/apis/api/v1alpha1"
+	v1alpha1custom "github.com/macpaw/provider-opsgenie/apis/custom/v1alpha1"
+	v1alpha1email "github.com/macpaw/provider-opsgenie/apis/email/v1alpha1"
+	v1alpha1integration "github.com/macpaw/provider-opsgenie/apis/integration/v1alpha1"
+	v1alpha1notification "github.com/macpaw/provider-opsgenie/apis/notification/v1alpha1"
+	v1alpha1opsgenie "github.com/macpaw/provider-opsgenie/apis/opsgenie/v1alpha1"
+	v1alpha1service "github.com/macpaw/provider-opsgenie/apis/service/v1alpha1"
+	v1alpha1team "github.com/macpaw/provider-opsgenie/apis/team/v1alpha1"
+	v1alpha1user "github.com/macpaw/provider-opsgenie/apis/user/v1alpha1"
+	v1alpha1apis "github.com/macpaw/provider-opsgenie/apis/v1alpha1"
+	v1beta1 "github.com/macpaw/provider-opsgenie/apis/v1beta1"
 )
 
 func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
+		v1alpha1api.SchemeBuilder.AddToScheme,
+		v1alpha1custom.SchemeBuilder.AddToScheme,
+		v1alpha1email.SchemeBuilder.AddToScheme,
+		v1alpha1integration.SchemeBuilder.AddToScheme,
+		v1alpha1notification.SchemeBuilder.AddToScheme,
+		v1alpha1opsgenie.SchemeBuilder.AddToScheme,
+		v1alpha1service.SchemeBuilder.AddToScheme,
+		v1alpha1team.SchemeBuilder.AddToScheme,
+		v1alpha1user.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,
 	)

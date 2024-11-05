@@ -1,0 +1,17 @@
+apiVersion: custom.macpaw.dev/v1alpha1
+kind: CustomRole
+metadata:
+  annotations:
+    meta.upbound.io/example-id: custom/v1alpha1/customrole
+  labels:
+    testing.upbound.io/example-name: test
+  name: test
+spec:
+  forProvider:
+    disallowedRights:
+    - profile-edit
+    - contacts-edit
+    extendedRole: user
+    grantedRights:
+    - alert-delete
+    roleName: genierole
