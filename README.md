@@ -1,4 +1,4 @@
-# Provider OpsGenie
+# Crossplane Provider OpsGenie
 
 `provider-opsgenie` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/crossplane/upjet) code
